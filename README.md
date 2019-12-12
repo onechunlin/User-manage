@@ -1,24 +1,8 @@
-# user-manage
+# 用户管理系统
 
-## Project setup
-```
-npm install
-```
+## 项目实现
+采用Vue框架搭建的前端，后台数据接口通过jsonserver搭建
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 效果展示
+[简易版效果展示]()，如需查看高清版展示，请下载MP4效果展示。
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
