@@ -1,4 +1,3 @@
-
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
@@ -8,8 +7,6 @@ import About from './components/About'
 import Add from './components/Add'
 import CustomersDetails from './components/CustomersDetails'
 import Edit from './components/Edit'
-
-
 Vue.config.productionTip = false
 Vue.use(VueRouter)
 Vue.use(VueResource)
@@ -31,6 +28,5 @@ const router = new VueRouter({
 new Vue({
   el: '#app',
   router,
-  components: { App },
-  template: '<App/>'
+  render: h => h(App)
 })

@@ -37,7 +37,7 @@ export default {
     },
     deleteCustomer(id){
       this.$http.delete("http://localhost:3000/users/"+id)
-                .then(res =>{
+                .then(() =>{
                   this.$router.push({name:'customersLink',query:{alert:"用户删除成功！"}})
                 })
     }
@@ -49,5 +49,11 @@ export default {
 </script>
 
 <style>
-
+.pull-right .btn{
+  margin: 5px;
+}
+.list-group-item{
+  background: #F6C89F;
+  border: 1px solid #ffe7d1;
+}
 </style>

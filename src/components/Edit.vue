@@ -33,7 +33,7 @@
                   <label for="">个人简介</label>
                   <textarea class="form-control" v-model="customer.profile" rows="10"></textarea>
               </div>
-              <button type="submit" class="btn btn-primary">确定</button>
+              <button type="submit" class="btn">确定</button>
           </div>
       </form>
   </div>
@@ -64,7 +64,7 @@ export default {
                   profile:this.customer.profile
               }
               this.$http.put("http://localhost:3000/users/"+this.$route.params.id,updateCustomer)
-                        .then(res =>{
+                        .then(() =>{
                             this.$router.push({name:'customersLink',query:{alert:"用户信息更新成功"}}) 
                         })
           }
@@ -87,5 +87,14 @@ export default {
 </script>
 
 <style>
-
+.well{
+    background: #f6c89f;
+}
+.well input,.well textarea{
+    background: #ffe7d1;
+}
+.well .btn{
+    background: #4b8e8d;
+    color: #fff;
+}
 </style>

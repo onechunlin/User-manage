@@ -2,20 +2,20 @@
   <div id="customer" class=" container">
     <Alert :message="alert" v-if="alert"></Alert>
     <h1 class="page-header">用户管理系统</h1>
-    <input type="text" class="form-control" placeholder="搜索" v-model="filterInput">
+    <input type="text" class="form-control" placeholder="搜索" v-model="filterInput" @input="refresh">
     <br>
-    <table class="table table-striped">
+    <table class="table">
         <thead>
             <tr>
                 <th>姓名</th>
                 <th>电话</th>
                 <th>邮箱</th>
-                <th></th>
+                <th> </th>
             </tr>
         </thead>
         <tbody>
             <tr v-for="customer in filterBy(customers,filterInput)" :key="customer.id">
-                <td>{{customer.name}}</td>
+                <td>{{ customer.name }}</td>
                 <td>{{customer.phone}}</td>
                 <td>{{customer.email}}</td>
                 <td><router-link class="btn btn-default" :to="'/customer/'+customer.id">详情</router-link></td>
@@ -46,12 +46,11 @@ export default {
       },
       filterBy(customers,value){
           return customers.filter(customer =>{
-              return customer.name.match(value);
+              return customer.name.toLowerCase().match(value.toLowerCase());
           })
       }
   },
   created(){
-     
       this.fetchCustomers();
   },
   updated(){
@@ -67,5 +66,22 @@ export default {
 </script>
 
 <style>
-
+tr th{
+    text-align: center;
+}
+tr td{
+    text-align: center;
+    vertical-align: middle !important;
+}
+.table .btn{
+    background: #4b8e8d;
+    color: #fff;
+}
+.table .btn:hover{
+    background: #fff;
+    color: #4b8e8d;
+}
+.form-control{
+    background: #f8eee5;
+}
 </style>

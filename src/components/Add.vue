@@ -64,7 +64,7 @@ export default {
                   profile:this.customer.profile
               }
               this.$http.post("http://localhost:3000/users",newCustomer)
-                        .then(res =>{
+                        .then(() =>{
                             this.$router.push({name:'customersLink',query:{alert:"用户信息添加成功"}}) 
                         })
           }
